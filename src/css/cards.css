@@ -103,25 +103,31 @@
 
 .card--heart,
 .card--diamond {
-  color: #e44145;
+    color: #e44145;
 }
+
 .card--spade,
 .card--club {
-  color: #252525;
+    color: #252525;
 }
 
 .card--heart .card__symbol:before {
-  content: "♥";
+    content: "♥";
 }
+
 .card--spade .card__symbol:before {
-  content: "♠";
+    content: "♠";
 }
+
 .card--diamond .card__symbol:before {
-  content: "♦";
+    content: "♦";
 }
+
 .card--club .card__symbol:before {
-  content: "♣";
+    content: "♣";
 }
+
+
 /* 
 .card {
   display: inline-block;
@@ -158,78 +164,79 @@
 } */
 
 .card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: space-between;
-  padding: 8px;
-  font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 20px;
 }
 
 .card .card-bottomright {
-  align-self: end;
-  transform: rotate(180deg);
+    align-self: end;
+    transform: rotate(180deg);
 }
 
 .card .card-center {
-  align-self: center;
+    align-self: center;
 }
 
 .deck {
-  position: relative;
+    position: relative;
 }
 
 .shoe,
 .discard {
-  top: 1.5rem;
+    top: 1.5rem;
 }
 
 .deck .card {
-  position: absolute;
-  top: 1.5rem;
+    position: absolute;
+    top: 1.5rem;
 }
 
-.shoe > .card,
-.discard > .card {
-  --tw-drop-shadow: none;
+.shoe>.card,
+.discard>.card {
+    --tw-drop-shadow: none;
 }
 
-.shoe > .card {
-  right: 0;
+.shoe>.card {
+    right: 0;
 }
 
-.discard > .card {
-  left: 0;
+.discard>.card {
+    left: 0;
 }
 
 .card.back {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3zwJFuJbODZ--Ac_hDP40S28MxwvV8VKRaw&usqp=CAUhttps://thomaslmcdonald.files.wordpress.com/2010/09/4044e-hoyleback.jpg");
-  /* background-image: url("https://thomaslmcdonald.files.wordpress.com/2010/09/4044e-hoyleback.jpg"); */
-  background-position: center;
-  background-size: contain;
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3zwJFuJbODZ--Ac_hDP40S28MxwvV8VKRaw&usqp=CAUhttps://thomaslmcdonald.files.wordpress.com/2010/09/4044e-hoyleback.jpg"); */
+    background-image: url("https://thomaslmcdonald.files.wordpress.com/2010/09/4044e-hoyleback.jpg");
+    background-position: center;
+    background-size: contain;
 }
 
 .card.back .card-center,
 .card.back .card-topleft,
 .card.back .card-bottomright {
-  opacity: 0;
+    opacity: 0;
 }
 
-.dealer > .cards:not(.showing) .card:nth-child(2) {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3zwJFuJbODZ--Ac_hDP40S28MxwvV8VKRaw&usqp=CAU");
-  background-position: center;
-  background-size: contain;
+.dealer>.cards:not(.showing) .card:nth-child(2) {
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3zwJFuJbODZ--Ac_hDP40S28MxwvV8VKRaw&usqp=CAU"); */
+    background-image: url("https://thomaslmcdonald.files.wordpress.com/2010/09/4044e-hoyleback.jpg");
+    background-position: center;
+    background-size: contain;
 }
 
-.dealer > .cards:not(.showing) .card:nth-child(2) .card-center,
-.dealer > .cards:not(.showing) .card:nth-child(2) .card-topleft,
-.dealer > .cards:not(.showing) .card:nth-child(2) .card-bottomright {
-  opacity: 0;
+.dealer>.cards:not(.showing) .card:nth-child(2) .card-center,
+.dealer>.cards:not(.showing) .card:nth-child(2) .card-topleft,
+.dealer>.cards:not(.showing) .card:nth-child(2) .card-bottomright {
+    opacity: 0;
 }
 
-.player > .player-doubled > .card:last-child {
-  position: absolute;
-  top: -50%;
-  right: -25%;
-  transform: rotate(90deg);
+.player>.player-doubled>.card:last-child {
+    position: absolute;
+    top: -50%;
+    right: -25%;
+    transform: rotate(90deg);
 }

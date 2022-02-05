@@ -1,5 +1,5 @@
 <template>
-  <div class="player flex items-start justify-center flex-grow">
+  <div class="player flex items-center justify-center flex-grow">
     <transition-group
       name="list"
       tag="div"
@@ -15,9 +15,20 @@
         :inPlay="true"
       />
     </transition-group>
+
     <span
       v-if="playerValue"
-      class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800"
+      class="
+        inline-flex
+        items-center
+        px-2.5
+        py-0.5
+        rounded-md
+        text-sm
+        font-medium
+        bg-indigo-100
+        text-indigo-800
+      "
     >
       {{ playerValue }} Player
     </span>
@@ -41,6 +52,12 @@ const playerValue = computed(() => {
 const playerDoubled = computed(() => {
   return store.getters.getPlayerDoubled;
 });
+
+function getAdvice() {
+  const playerValues = playerCards.value.map((card) => card.value);
+  const advice = getRecommendedPlayerAction(playerValues);
+  console.log(advice);
+}
 </script>
 
 <style>
@@ -48,7 +65,7 @@ const playerDoubled = computed(() => {
   display: inline-block;
   margin-right: 10px;
 }
-.list-enter-active{
+.list-enter-active {
   transition: all 500ms ease;
 }
 .list-leave-active {

@@ -1,5 +1,5 @@
 <template>
-  <div class="dealer flex items-start justify-center flex-grow">
+  <div class="dealer flex items-center justify-center flex-grow">
     <transition-group
       name="list"
       tag="div"

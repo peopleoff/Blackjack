@@ -2,11 +2,13 @@
   <main class="container mx-auto flex flex-col h-full">
     <game-over />
     <div class="flex flex-grow h-full">
-      <discard-pile />
+      <!-- <discard-pile /> -->
+      <game-stats/>
       <play-area />
-      <shoe />
+      <!-- <shoe /> -->
     </div>
-    <bottom-actions />
+    <!-- <bottom-actions /> -->
+    <basic-strategy-advice />
   </main>
 </template>
 
@@ -18,6 +20,9 @@ import DiscardPile from "./components/DiscardPile.vue";
 import PlayArea from "./views/PlayArea.vue";
 import BottomActions from "./components/BottomActions.vue";
 import GameOver from "./components/GameOver.vue";
+import BasicStrategyAdvice from "./components/BasicStrategyAdvice.vue";
+import GameStats from "./components/GameStats.vue";
+
 
 const store = useStore();
 

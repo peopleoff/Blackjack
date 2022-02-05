@@ -1,36 +1,110 @@
 <template>
-  <section class="flex justify-around p-6">
+  <section id="actions" class="flex justify-around p-6">
     <button
       v-if="gameState == 'playing'"
+      id="stand"
       type="button"
-      class="inline-flex items-center px-4 py-2 border border-transparent text-4xl font-medium rounded-md shadow-xl text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-      @click="playerStand"
+      class="
+        inline-flex
+        items-center
+        px-6
+        py-3
+        border border-transparent
+        shadow-sm
+        text-base
+        font-medium
+        rounded-md
+        text-white
+        bg-indigo-600
+        hover:bg-indigo-700
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-indigo-500
+      "
+      @click="playerAction('stand')"
     >
+      <HandIcon class="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
       Stand
     </button>
     <button
       v-if="gameState == 'playing'"
+      id="double"
       type="button"
-      class="inline-flex items-center px-4 py-2 border border-transparent text-4xl font-medium rounded-md shadow-xl text-white bg-cyan-400 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-300"
-      @click="playerHit"
+      class="
+        inline-flex
+        items-center
+        px-6
+        py-3
+        border border-transparent
+        shadow-sm
+        text-base
+        font-medium
+        rounded-md
+        text-white
+        bg-indigo-600
+        hover:bg-indigo-700
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-indigo-500
+      "
+      @click="playerAction('double')"
     >
-      Hit
+      <MailIcon class="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
+      Double
     </button>
     <button
       v-if="gameState == 'playing'"
+      id="hit"
       type="button"
-      class="inline-flex items-center px-4 py-2 border border-transparent text-4xl font-medium rounded-md shadow-xl text-white bg-cyan-400 hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-300"
-      @click="playerDouble"
+      class="
+        inline-flex
+        items-center
+        px-6
+        py-3
+        border border-transparent
+        shadow-sm
+        text-base
+        font-medium
+        rounded-md
+        text-white
+        bg-indigo-600
+        hover:bg-indigo-700
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-indigo-500
+      "
+      @click="playerAction('hit')"
     >
-      Double
+      <DocumentAddIcon class="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
+      Hit
     </button>
-
     <button
       v-if="gameState == 'notStarted'"
       type="button"
-      class="inline-flex items-center px-4 py-2 border border-transparent text-4xl font-medium rounded-md shadow-xl text-white bg-orange-400 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-300"
+      class="
+        inline-flex
+        items-center
+        px-6
+        py-3
+        border border-transparent
+        shadow-sm
+        text-base
+        font-medium
+        rounded-md
+        text-white
+        bg-indigo-600
+        hover:bg-indigo-700
+        focus:outline-none
+        focus:ring-2
+        focus:ring-offset-2
+        focus:ring-indigo-500
+      "
       @click="startRound"
     >
+      <MailIcon class="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
       Deal
     </button>
   </section>
@@ -39,6 +113,7 @@
 <script setup>
 import { computed } from "vue";
 import { useStore } from "vuex";
+import { MailIcon, HandIcon, DocumentAddIcon } from "@heroicons/vue/outline";
 
 const store = useStore();
 
@@ -49,14 +124,8 @@ const gameState = computed(() => {
 function startRound() {
   store.dispatch("startRound");
 }
-function playerHit() {
-  store.dispatch("playerHit");
-}
-function playerStand() {
-  store.dispatch("playerStand");
-}
-function playerDouble() {
-  store.dispatch("playerDoublesDown");
+function playerAction(action) {
+  store.dispatch("playerAction", action);
 }
 </script>
 
